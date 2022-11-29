@@ -10,6 +10,12 @@ class HomeController extends Controller
     public function Dashboard()
     {
         $list= Post::all();
+        // $list= Post::where('user_id', '=', auth()->user()->id)->get();
+
+        // Post::create([
+        //     'title' =>
+        //     'user_id'=>auth()->user()->id,
+        // ]);
         return view('Dashboard',compact('list'));
     }
     public function login()

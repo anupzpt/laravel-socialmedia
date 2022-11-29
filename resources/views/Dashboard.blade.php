@@ -26,6 +26,9 @@
 
                     {{-- function ko name user xa in model post--}}
                     <th>{{$value->user->name}}</th>
+                    @if(auth()->user()->id == $value->user->id)
+                    <th><button>delete</button></th>
+                    @endif
                 </tr>
                 @endforeach
 
