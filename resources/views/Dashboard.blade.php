@@ -6,6 +6,31 @@
         <button type="submit"
         class="btn btn-success text-white">Logout</button>
         </div></form>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>SN</th>
+                    <th>Post</th>
+                    <th>Created By</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                @php
+                    $sn=1;
+                @endphp
+                @foreach ($list as $value)
+                <tr>
+                    <th>{{$sn++}}</th>
+                    <th>{{$value->title}}</th>
+
+                    {{-- function ko name user xa in model post--}}
+                    <th>{{$value->user->name}}</th>
+                </tr>
+                @endforeach
+
+            </tbody>
+        </table>
 </div>
 
 @endsection

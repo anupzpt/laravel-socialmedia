@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 use App\Models\Home;
-
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function Dashboard()
     {
-        return view('Dashboard');
+        $list= Post::all();
+        return view('Dashboard',compact('list'));
     }
     public function login()
     {
