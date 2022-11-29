@@ -17,9 +17,13 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', [HomeController::class, 'Dashboard'])->name('Dashboard')->middleware(['auth']);
+Route::get('/Dashboard', [HomeController::class, 'Dashboard'])->name('Dashboard')->middleware(['auth']);
 Route::get('/login', [HomeController::class, 'login'])->name('login');
 Route::get('/register', [HomeController::class, 'register'])->name('register');
+Route::get('/add-data', [HomeController::class, 'addData'])->name('addData');
+Route::post('/save-data', [HomeController::class, 'saveData'])->name('saveData');
+Route::get('/delete/{id}', [HomeController::class, 'delete']);
+
 Route::post('/register', [UserController::class, 'registerUser'])->name('registerUser');
 Route::post('/login', [UserController::class, 'loginUser'])->name('loginUser');
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');

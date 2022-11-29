@@ -23,8 +23,8 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        User::factory()->times(10)->create();
-        Post::factory()->times(10)->create();
+        User::factory()->times(5)->create();
+        Post::factory()->times(5)->create();
     }
 
 }
