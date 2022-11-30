@@ -27,19 +27,18 @@
                 @endphp
                 @foreach ($list as $value)
                 <tr>
-                    <th>{{$sn++}}</th>
-                    <th>{{$value->title}}</th>
-
+                    <td>{{$sn++}}</td>
+                    <td>{{$value->title}}</td>
                     {{-- function ko name user xa in model post--}}
-                    <th>{{$value->user->name}}</th>
-                    @if(auth()->user()->id == $value->user->id)
-                    <th>
-                        <button class="btn btn-danger"><a href="{{url ('/delete/'.$value->id)}}" class="text-white"><span class="fas fa-trash ml-3"></a></button>
-                    </th>
-                    {{-- <td>
+                    <td>{{$value->user->name}}</td>
+                    <td>
+                        @if(auth()->user()->id == $value->user->id)
                         <button class="btn btn-primary"><a href="{{url('/edit/'.$value->id)}}" class="text-white"><span class="fas fa-pencil ml-3"></a></button>
-                    </td> --}}
-                    @endif
+                            <button class="btn btn-danger"><a href="{{url ('/delete/'.$value->id)}}" class="text-white"><span class="fas fa-trash ml-3"></a></button>
+                                @endif
+
+                    <td >
+
                 </tr>
                 @endforeach
 

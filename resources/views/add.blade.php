@@ -5,8 +5,8 @@
     <form action="{{route('saveData')}}" method="post">
         @csrf
         <div class="form-group  p-2">
-            <label for="exampleInputPassword1">Name</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Name"  name="title">
+            <label for="exampleInputPassword1">Post</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Post"  name="title">
           </div>
         <button class="btn btn-primary" style="margin-top: 15px" type="submit">Save</button>
         </div>

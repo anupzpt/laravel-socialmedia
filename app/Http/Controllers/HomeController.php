@@ -31,21 +31,5 @@ class HomeController extends Controller
     public function addData(){
         return view('add');
     }
-    public function saveData(Request $request)
-    {
-        $request->validate([
-            'title' =>'required',
-        ]);
-        Post::create([
-            'title'=>$request->title,
-            'user_id'=>auth()->user()->id,
-        ]);
-        return redirect('Dashboard');
-    }
-    public function delete($id)
-    {
-        $data= Post::find($id);
-        $data->delete();
-        return redirect('Dashboard');
-    }
+
 }

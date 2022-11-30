@@ -4,6 +4,8 @@ use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PostController;
+
 
 
 /*
@@ -21,8 +23,11 @@ Route::get('/Dashboard', [HomeController::class, 'Dashboard'])->name('Dashboard'
 Route::get('/login', [HomeController::class, 'login'])->name('login');
 Route::get('/register', [HomeController::class, 'register'])->name('register');
 Route::get('/add-data', [HomeController::class, 'addData'])->name('addData');
-Route::post('/save-data', [HomeController::class, 'saveData'])->name('saveData');
-Route::get('/delete/{id}', [HomeController::class, 'delete']);
+
+Route::post('/save-data', [PostController::class, 'saveData'])->name('saveData');
+Route::get('/delete/{id}', [PostController::class, 'delete']);
+Route::get('/edit/{id}', [PostController::class, 'edit'])->middleware(['auth']);
+Route::post('/edit', [PostController::class, 'updateData'])->name('updateData');
 
 Route::post('/register', [UserController::class, 'registerUser'])->name('registerUser');
 Route::post('/login', [UserController::class, 'loginUser'])->name('loginUser');
