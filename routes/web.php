@@ -19,7 +19,7 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/Dashboard', [HomeController::class, 'Dashboard'])->name('Dashboard')->middleware(['auth']);
+Route::get('/', [HomeController::class, 'Dashboard'])->name('Dashboard')->middleware(['auth']);
 Route::get('/login', [HomeController::class, 'login'])->name('login');
 Route::get('/register', [HomeController::class, 'register'])->name('register');
 Route::get('/add-data', [HomeController::class, 'addData'])->name('addData');

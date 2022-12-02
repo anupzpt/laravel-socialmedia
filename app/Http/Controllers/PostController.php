@@ -16,7 +16,7 @@ class PostController extends Controller
             'title'=>$request->title,
             'user_id'=>auth()->user()->id,
         ]);
-        return redirect('Dashboard');
+        return redirect()->route('Dashboard');
     }
     public function edit($id)
     {
@@ -29,12 +29,13 @@ class PostController extends Controller
         $newObj->update([
             'title' =>$request->title,
         ]);
-        return redirect('Dashboard');
+        return redirect()->route('Dashboard');
     }
     public function delete($id)
     {
         $data= Post::find($id);
         $data->delete();
-        return redirect('Dashboard');
+        return redirect()->route('Dashboard');
+
     }
 }

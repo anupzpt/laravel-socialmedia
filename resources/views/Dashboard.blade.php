@@ -34,7 +34,27 @@
                     <td>
                         @if(auth()->user()->id == $value->user->id)
                         <button class="btn btn-primary"><a href="{{url('/edit/'.$value->id)}}" class="text-white"><span class="fas fa-pencil ml-3"></a></button>
-                            <button class="btn btn-danger"><a href="{{url ('/delete/'.$value->id)}}" class="text-white"><span class="fas fa-trash ml-3"></a></button>
+                            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"><span class="fas fa-trash ml-3"></a></button>
+                              <!-- Modal -->
+                              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">Delete </h5>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <h2>Are you sure You want to delete ?</h2>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                      <a type="button" href="{{url ('/delete/'.$value->id)}}" class="btn btn-danger">Confirm</a>
+
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            {{-- <button class="btn btn-danger"><a href="{{url ('/delete/'.$value->id)}}" class="text-white"><span class="fas fa-trash ml-3"></a></button> --}}
                                 @endif
 
                     <td >
