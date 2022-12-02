@@ -10,4 +10,8 @@ class User extends Model
     use HasFactory;
     //database ko column ko name hunxa
     protected $fillable =['name','email','password'];
+
+    public function posts(){
+        return $this->hasMany(Post::class);
+    }
 }
