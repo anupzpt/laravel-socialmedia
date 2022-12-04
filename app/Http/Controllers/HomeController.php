@@ -17,6 +17,7 @@ class HomeController extends Controller
         //     'title' =>
         //     'user_id'=>auth()->user()->id,
         // ]);
+
         return view('Dashboard',compact('list'));
     }
 

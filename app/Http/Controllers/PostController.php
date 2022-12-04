@@ -32,11 +32,13 @@ class PostController extends Controller
         ]);
         return redirect()->route('Dashboard');
     }
-    public function delete($id)
+    public function delete(Request $request)
     {
-        $data= Post::find($id);
-        $data->delete();
-        return redirect()->route('Dashboard');
+        dd($request->all());
+        // dd($id);
+        // $data= Post::find($id);
+        // //$data->delete();
+        // return redirect()->route('Dashboard');
 
     }
 }
