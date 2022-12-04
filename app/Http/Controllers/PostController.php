@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
-
+use RealRashid\SweetAlert\Facades\Alert;
 class PostController extends Controller
 {
     public function saveData(Request $request)
@@ -16,6 +16,7 @@ class PostController extends Controller
             'title'=>$request->title,
             'user_id'=>auth()->user()->id,
         ]);
+        Alert::success('Saved', 'Data Saved Successfully');
         return redirect()->route('Dashboard');
     }
     public function edit($id)
@@ -31,11 +32,13 @@ class PostController extends Controller
         ]);
         return redirect()->route('Dashboard');
     }
-    public function delete($id)
+    public function delete(Request $request)
     {
-        $data= Post::find($id);
-        $data->delete();
-        return redirect()->route('Dashboard');
+        dd($request->all());
+        // dd($id);
+        // $data= Post::find($id);
+        // //$data->delete();
+        // return redirect()->route('Dashboard');
 
     }
 }

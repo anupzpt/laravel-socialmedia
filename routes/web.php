@@ -25,7 +25,7 @@ Route::get('/register', [HomeController::class, 'register'])->name('register');
 Route::get('/add-data', [HomeController::class, 'addData'])->name('addData');
 
 Route::post('/save-data', [PostController::class, 'saveData'])->name('saveData');
-Route::get('/delete/{id}', [PostController::class, 'delete']);
+Route::post('/delete', [PostController::class, 'delete'])->name('delete');
 Route::get('/edit/{id}', [PostController::class, 'edit'])->middleware(['auth']);
 Route::post('/edit', [PostController::class, 'updateData'])->name('updateData');
 
