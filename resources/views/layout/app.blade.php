@@ -46,6 +46,6 @@
     {{-- dynamic content --}}
     {{-- name matra ho content --}}
     @yield('content')
-
+    @include('sweetalert::alert')
 </body>
 </html>
